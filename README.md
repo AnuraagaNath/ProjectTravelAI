@@ -1,70 +1,110 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ProjectTravelAI
+
+ProjectTravelAI is a React-based web application that integrates the TomTom Maps API to provide users with interactive map functionalities, including location search and route calculation.
+
+## Features
+
+- **Interactive Map**: Displays a dynamic map centered on the user's current location.
+- **Search Functionality**: Allows users to search for specific locations using the TomTom SearchBox plugin.
+- **Route Calculation**: Enables users to calculate and visualize routes between an origin and a destination.
+
+## Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 14 or above)
+- npm (comes with Node.js)
+
+## Getting Started
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/AnuraagaNath/ProjectTravelAI.git
+   cd ProjectTravelAI
+   ```
+
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Obtain a TomTom API Key**:
+   - Sign up or log in to the [TomTom Developer Portal](https://developer.tomtom.com/).
+   - Navigate to the [Dashboard](https://developer.tomtom.com/user/me/apps) and create a new application to get your API key.
+
+4. **Configure the API Key**:
+   - Create a `.env` file in the root directory of the project.
+   - Add the following line to the `.env` file:
+     ```
+     REACT_APP_TOMTOM_API_KEY=your_tomtom_api_key_here
+     ```
+   - Replace `your_tomtom_api_key_here` with the API key you obtained.
+
+5. **Start the Development Server**:
+   ```bash
+   npm start
+   ```
+   - Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+## Project Structure
+
+The project's structure is as follows:
+
+```
+ProjectTravelAI/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── MapComponent.jsx
+│   ├── hooks/
+│   │   └── useGeolocation.js
+│   ├── App.css
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .env
+├── package.json
+└── README.md
+```
+
+- `src/components/MapComponent.jsx`: Contains the main map component that integrates with the TomTom API.
+- `src/hooks/useGeolocation.js`: Custom hook to retrieve and manage the user's geolocation.
+- `App.js`: Root component that renders the `MapComponent`.
+- `App.css`: Styling for the application.
+- `.env`: Environment file storing sensitive configurations like the API key.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- `npm start`: Runs the app in development mode.
+- `npm test`: Launches the test runner.
+- `npm run build`: Builds the app for production.
+- `npm run eject`: Ejects the app configuration. **Note**: This is a one-way operation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Key dependencies used in this project include:
 
-### `npm test`
+- `react`: JavaScript library for building user interfaces.
+- `@tomtom-international/web-sdk-maps`: TomTom Maps SDK for embedding maps.
+- `@tomtom-international/web-sdk-services`: TomTom Services SDK for accessing services like routing and search.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For the complete list of dependencies, refer to the `package.json` file.
 
-### `npm run build`
+## License
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Acknowledgments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [TomTom Developer Portal](https://developer.tomtom.com/) for providing the Maps API and documentation.
+- [Create React App](https://create-react-app.dev/) for bootstrapping the React application.
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note: Ensure that the `.env` file is included in your `.gitignore` to prevent exposing sensitive information. 
